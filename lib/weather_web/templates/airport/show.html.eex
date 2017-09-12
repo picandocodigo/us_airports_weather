@@ -1,0 +1,10 @@
+<h1><%= assigns[:data][:location] %></h1>
+
+<p>
+  <ul>
+    <li>Latitude: <%= @data[:latitude] %></li>
+    <li>Longitude: <%= @data[:longitude] %></li>
+    <li>
+      <strong>Weather</strong>: <%= @data[:weather] %> - <%= @data[:temp_c] %>°C
+    </li>
+</p>

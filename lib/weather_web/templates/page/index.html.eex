@@ -1,0 +1,35 @@
+<div class="jumbotron">
+  <h2><%= gettext "Welcome to %{name}!", name: "Phoenix" %></h2>
+  <p>
+    Basic Phoenix Web App with weather information from airports in the United States.
+  </p>
+  <p>
+    Data source: <a href="http://w1.weather.gov/xml/current_obs/" target="_blank">US National Weather Service</a>. Idea: <a href="https://www.manning.com/books/elixir-in-action" target="_blank">Elixir in Action</a> - Chapter 13.
+  </p>
+</div>
+
+<div class="row marketing">
+  <div class="col-lg-6">
+    <h4>Built at <a href="http://cultivatehq.com">Cultivate</a></h4>
+    <ul>
+      <li>
+        <a href="https://github.com/cultivatehq">Check our GitHub</a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="col-lg-6">
+    <h4>Help</h4>
+    <ul>
+      <li>
+        <a href="http://groups.google.com/group/phoenix-talk">Mailing list</a>
+      </li>
+      <li>
+        <a href="http://webchat.freenode.net/?channels=elixir-lang">#elixir-lang on freenode IRC</a>
+      </li>
+      <li>
+        <a href="https://twitter.com/elixirphoenix">@elixirphoenix</a>
+      </li>
+    </ul>
+  </div>
+</div>

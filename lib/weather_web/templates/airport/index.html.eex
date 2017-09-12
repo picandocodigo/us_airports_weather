@@ -1,0 +1,10 @@
+<div class="jumbotron">
+  <h1>Airports</h1>
+  <ul>
+    <li><a href="<%= airport_path(@conn, :show, :jfk) %>">JFK</li>
+    <li><a href="<%= airport_path(@conn, :show, :lax) %>">LAX</li>
+    <li><a href="<%= airport_path(@conn, :show, :lga) %>">LGA</li>
+    <li><a href="<%= airport_path(@conn, :show, :mia) %>">MIA</a></li>
+    <li><a href="<%= airport_path(@conn, :show, :sfo) %>">SFO</li>
+  </ul>
+</div>
