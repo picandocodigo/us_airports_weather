@@ -23,9 +23,9 @@ config :logger, :console,
   metadata: [:request_id]
 
 config :weather, weather_config: [
-  username: "admin",
-  password: "admin",
-  realm: "Admin Area"
+  username: {:system, "BASIC_AUTH_USERNAME"},
+  password: {:system, "BASIC_AUTH_PASSWORD"},
+  realm:    {:system, "BASIC_AUTH_REALM"}
 ]
 
 # Import environment specific config. This must remain at the bottom
