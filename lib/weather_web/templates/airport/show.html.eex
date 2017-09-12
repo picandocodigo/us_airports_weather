@@ -7,4 +7,10 @@
     <li>
       <strong>Weather</strong>: <%= @data[:weather] %> - <%= @data[:temp_c] %>°C
     </li>
+    <li><strong>Wind:</strong> <%= @data[:wind] %> <%= @data[:wind_mph] %> mph <%= @data[:wind_dir] %></li>
+    <li>Pressure: <%= @data[:pressure] %></li>
+    <li>Visibility: <%= @data[:visibility] %> mi</li>
+  </ul>
+  <em><%= @data[:observation_time] %></em>
+
 </p>

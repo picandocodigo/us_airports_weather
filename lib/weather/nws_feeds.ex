@@ -42,6 +42,16 @@ defmodule NwsFeeds do
       |> Meeseeks.text,
       observation_time: Meeseeks.one(document, Meeseeks.CSS.css("observation_time"))
       |> Meeseeks.text,
+      pressure: Meeseeks.one(document, Meeseeks.CSS.css("pressure_string"))
+      |> Meeseeks.text,
+      visibility: Meeseeks.one(document, Meeseeks.CSS.css("visibility_mi"))
+      |> Meeseeks.text,
+      wind: Meeseeks.one(document, Meeseeks.CSS.css("wind_string"))
+      |> Meeseeks.text,
+      wind_mph: Meeseeks.one(document, Meeseeks.CSS.css("wind_mph"))
+      |> Meeseeks.text,
+      wind_dir: Meeseeks.one(document, Meeseeks.CSS.css("wind_dir"))
+      |> Meeseeks.text,
     }
   end
 
