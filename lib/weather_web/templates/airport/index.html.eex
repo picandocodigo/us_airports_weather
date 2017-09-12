@@ -1,10 +1,28 @@
-<div class="jumbotron">
-  <h1>Airports</h1>
-  <ul>
-    <li><a href="<%= airport_path(@conn, :show, :jfk) %>">JFK</li>
-    <li><a href="<%= airport_path(@conn, :show, :lax) %>">LAX</li>
-    <li><a href="<%= airport_path(@conn, :show, :lga) %>">LGA</li>
-    <li><a href="<%= airport_path(@conn, :show, :mia) %>">MIA</a></li>
-    <li><a href="<%= airport_path(@conn, :show, :sfo) %>">SFO</li>
-  </ul>
-</div>
+<h2>Listing Airports</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Code</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for airport <- @airports do %>
+    <tr>
+      <td><%= airport.name %></td>
+      <td><%= airport.code %></td>
+
+      <td class="text-right">
+        <span><%= link "Show", to: airport_path(@conn, :show, airport), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Edit", to: airport_path(@conn, :edit, airport), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Delete", to: airport_path(@conn, :delete, airport), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Airport", to: airport_path(@conn, :new) %></span>

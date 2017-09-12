@@ -1,16 +1,21 @@
-<h1><%= assigns[:data][:location] %></h1>
+<h2><%= @airport.name %></h2>
 
 <p>
-  <ul>
-    <li>Latitude: <%= @data[:latitude] %></li>
-    <li>Longitude: <%= @data[:longitude] %></li>
-    <li>
-      <strong>Weather</strong>: <%= @data[:weather] %> - <%= @data[:temp_c] %>°C
-    </li>
-    <li><strong>Wind:</strong> <%= @data[:wind] %></li>
-    <li>Pressure: <%= @data[:pressure] %></li>
-    <li>Visibility: <%= @data[:visibility] %> mi</li>
-  </ul>
-  <em><%= @data[:observation_time] %></em>
-
+  <strong>Code:</strong>
+  <%= @airport.code %>
 </p>
+
+<ul>
+  <li>Latitude: <%= @data[:latitude] %></li>
+  <li>Longitude: <%= @data[:longitude] %></li>
+  <li>
+    <strong>Weather</strong>: <%= @data[:weather] %> - <%= @data[:temp_c] %>°C
+  </li>
+  <li><strong>Wind:</strong> <%= @data[:wind] %></li>
+  <li>Pressure: <%= @data[:pressure] %></li>
+  <li>Visibility: <%= @data[:visibility] %> mi</li>
+</ul>
+<em><%= @data[:observation_time] %></em>
+
+<span><%= link "Edit", to: airport_path(@conn, :edit, @airport) %></span>
+<span><%= link "Back", to: airport_path(@conn, :index) %></span>
