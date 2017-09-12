@@ -1,1 +1,8 @@
 /* This file is for your main application css. */
+.logo{
+  background-image: url(/images/logo.png);
+  background-size: 151px 100px;
+  background-repeat: no-repeat;
+  width: 519px;
+  height: 100px;
+}

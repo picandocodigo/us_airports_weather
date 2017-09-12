@@ -52,8 +52,8 @@ config :phoenix, :stacktrace_depth, 20
 # TODO: Put this into .env file
 config :weather, Weather.Repo,
   adapter: Ecto.Adapters.Postgres,
-  username: "fernando",
-  password: "fernando",
+  username: "postgres",
+  password: "postgres",
   database: "weather_dev",
   hostname: "localhost",
   pool_size: 10
