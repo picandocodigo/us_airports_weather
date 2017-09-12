@@ -17,3 +17,9 @@ config :weather, Weather.Repo,
   database: "weather_test",
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox
+
+config :weather, weather_config: [
+  username: "admin",
+  password: "admin",
+  realm:    "admin"
+]

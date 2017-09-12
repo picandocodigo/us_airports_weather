@@ -2,6 +2,10 @@
 
 Basic Phoenix Web App with weather information from airports in the United States. Data source: [US National Weather Service](http://w1.weather.gov/xml/current_obs/). Idea: [Elixir in Action](https://www.manning.com/books/elixir-in-action) - Chapter 13.
 
+# TODO
+- Errors - https://hexdocs.pm/phoenix/errors.html
+- Tests - Bring over tests for xml feed parsing. Read: https://hexdocs.pm/phoenix/testing.html and onwards. Missing test for authentication in controller (401 for no authentication).
+
 # Phoenix stuff:
 
 To start your Phoenix server:
