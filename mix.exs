@@ -20,7 +20,7 @@ defmodule Weather.Mixfile do
   def application do
     [
       mod: {Weather.Application, []},
-      extra_applications: [:logger, :runtime_tools, :httpoison, :meeseeks]
+      extra_applications: [:logger, :runtime_tools, :httpoison]
     ]
   end
 
@@ -42,7 +42,7 @@ defmodule Weather.Mixfile do
       {:gettext, "~> 0.11"},
       {:cowboy, "~> 1.0"},
       {:httpoison, "~> 0.8"},
-      {:meeseeks, "~> 0.7.3"},
+      {:floki, "~> 0.18.0"}
 
     ]
   end

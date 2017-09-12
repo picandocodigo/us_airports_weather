@@ -7,7 +7,6 @@ defmodule WeatherWeb.AirportController do
 
   def show(conn, params) do
     id = String.upcase("K" <> params["id"])
-    import NwsFeeds
     data = NwsFeeds.fetch(id)
     render conn, "show.html", id: id, data: data
   end

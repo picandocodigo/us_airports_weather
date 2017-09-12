@@ -13,7 +13,7 @@ defmodule NwsFeeds do
   end
 
   def handle_response({:ok, %{status_code: 200, body: body}}) do
-    document = Meeseeks.parse(body, :xml)
+    document = Floki.parse(body)
     {:ok, document}
   end
 
@@ -26,36 +26,17 @@ defmodule NwsFeeds do
     # TODO
   end
   def build_structure({:ok, document}) do
-    import Meeseeks.CSS
-    # TODO: Exctract getting the value into a function, not working for some
-    # reason...
+    text = fn(key) -> document |> Floki.find(key) |> Floki.text end
     %{
-      location: Meeseeks.one(document, Meeseeks.CSS.css("location"))
-      |> Meeseeks.text,
-      latitude: Meeseeks.one(document, Meeseeks.CSS.css("latitude"))
-      |> Meeseeks.text,
-      longitude: Meeseeks.one(document, Meeseeks.CSS.css("longitude"))
-      |> Meeseeks.text,
-      weather: Meeseeks.one(document, Meeseeks.CSS.css("weather"))
-      |> Meeseeks.text,
-      temp_c: Meeseeks.one(document, Meeseeks.CSS.css("temp_c"))
-      |> Meeseeks.text,
-      observation_time: Meeseeks.one(document, Meeseeks.CSS.css("observation_time"))
-      |> Meeseeks.text,
-      pressure: Meeseeks.one(document, Meeseeks.CSS.css("pressure_string"))
-      |> Meeseeks.text,
-      visibility: Meeseeks.one(document, Meeseeks.CSS.css("visibility_mi"))
-      |> Meeseeks.text,
-      wind: Meeseeks.one(document, Meeseeks.CSS.css("wind_string"))
-      |> Meeseeks.text,
-      wind_mph: Meeseeks.one(document, Meeseeks.CSS.css("wind_mph"))
-      |> Meeseeks.text,
-      wind_dir: Meeseeks.one(document, Meeseeks.CSS.css("wind_dir"))
-      |> Meeseeks.text,
+      location: text.("location"),
+      latitude: text.("latitude"),
+      longitude: text.("longitude"),
+      weather: text.("weather"),
+      temp_c: text.("temp_c"),
+      observation_time: text.("observation_time"),
+      pressure: text.("pressure_string"),
+      visibility: text.("visibility_mi"),
+      wind: text.("wind_string")
     }
-  end
-
-  def parse_value({:error, document}) do
-    # TODO: Log and stuff
   end
 end
