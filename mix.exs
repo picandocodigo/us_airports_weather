@@ -42,8 +42,8 @@ defmodule Weather.Mixfile do
       {:gettext, "~> 0.11"},
       {:cowboy, "~> 1.0"},
       {:httpoison, "~> 0.8"},
-      {:floki, "~> 0.18.0"}
-
+      {:floki, "~> 0.18.0"},
+      {:basic_auth, "~> 2.1.4"}
     ]
   end
 

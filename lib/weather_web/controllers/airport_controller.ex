@@ -9,6 +9,13 @@ defmodule WeatherWeb.AirportController do
     render(conn, "index.html", airports: airports)
   end
 
+  def show(conn, %{"id" => id}) do
+    airport = Airports.get_airport!(id)
+    id = String.upcase("K" <> airport.code)
+    data = NwsFeeds.fetch(id)
+    render(conn, "show.html", airport: airport, data: data)
+  end
+
   def new(conn, _params) do
     changeset = Airports.change_airport(%Airport{})
     render(conn, "new.html", changeset: changeset)
@@ -23,13 +30,6 @@ defmodule WeatherWeb.AirportController do
       {:error, %Ecto.Changeset{} = changeset} ->
         render(conn, "new.html", changeset: changeset)
     end
-  end
-
-  def show(conn, %{"id" => id}) do
-    airport = Airports.get_airport!(id)
-    id = String.upcase("K" <> airport.code)
-    data = NwsFeeds.fetch(id)
-    render(conn, "show.html", airport: airport, data: data)
   end
 
   def edit(conn, %{"id" => id}) do
